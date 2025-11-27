@@ -1,0 +1,141 @@
+.main{
+    display: flex;
+width: 100%;
+padding: 5vw 9vw 15vw 9vw;
+flex-direction: column;
+align-items: center;
+gap: 4.5vw;
+background: linear-gradient(180deg, #FFF 0%, #DBE7FD 100%);
+ box-sizing: border-box; /* 패딩 포함 처리 */
+}
+
+.main-top{
+    display: flex;
+flex-direction: column;
+align-items: center;
+gap: 2.1vw;
+}
+
+.main-top-two{
+    display: flex;
+flex-direction: column;
+align-items: center;
+gap: 2.1vw;
+}
+
+.main-top-text{
+    display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0.4vw;
+}
+
+.main-top-text-small{
+    align-self: stretch;
+    color: #2C2F4E;
+text-align: center;
+font-family: Pretendard;
+font-size: 2.7vw;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.main-top-text-big{
+    color: #2C2F4E;
+text-align: center;
+font-family: Pretendard;
+font-size: 3.7vw;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.main-top-search{
+    display: flex;
+padding: 0.9vw 18vw 0.9vw 2.5vw;
+justify-content: center;
+align-items: center;
+gap: 1.3vw;
+background: rgba(255, 255, 255,0.9);
+border-radius: 117px;
+backdrop-filter: blur(18px);                           /* 배경 흐림 */
+  -webkit-backdrop-filter: blur(18px);                   /* 사파리 대응 */
+
+}
+
+.border{
+      position: relative;
+  padding: 4px; /* 테두리 두께 */
+  border-radius: 117px; /* 너가 원하는 둥근 정도 */
+  background: linear-gradient(135deg, hsla(234, 100%, 64%, 1), hsla(214, 91%, 93%, 1));
+    box-shadow: 0 8px 32px rgba(39, 39, 48, 0.04);
+}
+
+.main-top-search-text{
+    color: #9CA3AB;
+        
+text-align: center;
+font-family: Pretendard;
+font-size: 1.6vw;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.main-bottom{
+    display: flex;
+align-items: center;
+gap: 3.5vw;
+align-self: stretch;
+}
+
+.main-bottom-box{
+    display: flex;
+    flex-direction: column;
+padding: 5vw 4.7vw 5vw 4.1vw;
+align-items: flex-start;
+gap: 0.1vw;
+border-radius: 97px;
+background: rgba(255, 255, 255, 0.22);                 /* 더 투명하게 */
+  backdrop-filter: blur(18px);                           /* 배경 흐림 */
+  -webkit-backdrop-filter: blur(18px);                   /* 사파리 대응 */
+
+  /* 유리 테두리 느낌 */
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+
+  /* 유리 섀도우로 떠있는 느낌 */
+  box-shadow: 0 8px 32px rgba(39, 39, 48, 0.04);
+}
+
+.car{
+    display: flex;
+    padding-left: 22.5vw;
+}
+
+.main-bottom-new-text{
+    display: flex;
+padding-top: 2.5vw;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+gap: 0.9vw;
+}
+
+.main-bottom-text-small{
+    color: #6B6F8D;
+font-family: Pretendard;
+font-size: 1.7vw;
+font-style: normal;
+font-weight: 400;
+}
+
+.main-bottom-text-big{
+    color: #373B61;
+font-family: Pretendard;
+font-size: 2vw;
+font-style: normal;
+font-weight: 700;
+}
+
+.
