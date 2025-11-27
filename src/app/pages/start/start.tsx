@@ -1,36 +1,67 @@
 'use client';
 import './start.css'
-// 3d.png wasn't present in the repository; use a public placeholder instead
-import Image from "../../../assets/3d.png"
 import Search from "../../../assets/search.svg"
 import Car from "../../../assets/car.svg"
+import Person from "../../../assets/person.svg"
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+
 
 export default function Start({ onStart }: { onStart: () => void }){
+    const [keyword, setKeyword] = useState("");
+    const [isFocused, setIsFocused] = useState(false);
+    const router = useRouter();
+
+    const handleSearch = () => {
+    const q = keyword.trim();
+    if (!q) return;
+    // 👉 검색어를 URL에 실어서 다른 페이지로 이동
+    router.push(`/result?q=${encodeURIComponent(q)}`);
+    };
+    const showGuide = !isFocused && keyword === "";
+
     return(
         <div className="main">
             <div className="main-top">
-                <img src={Image.src} alt="대표아이콘" style={{ width: "20vw", height: "15vw" }}/>
+                <video src="/icon.mp4" autoPlay muted loop playsInline className="my-video" style={{ width: "20vw", height: "15vw" }}/>
                 <div className='main-top-two'>
                     <div className="main-top-text">
-                        <div className="main-top-text-small" onClick={onStart}>안녕하세요</div>
+                        <div className="main-top-text-small">안녕하세요</div>
                         <div className="main-top-text-big">어떤 주차장을 찾으시나요?</div>
                     </div>
                     <div className='border'>
                         <div className='main-top-search'>
-                            <img src={Search.src} alt="대표아이콘" style={{ width: "2.3vw", height: "2.3vw" }}/>
-                            <div className='main-top-search-text'>주차장 이름이나 주소를 입력해주세요</div>
+                            <input
+                                className="searchInput"
+                                value={keyword}
+                                onChange={(e) => setKeyword(e.target.value)}
+                                onFocus={() => setIsFocused(true)}
+                                onBlur={() => setIsFocused(false)}
+                                onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+                            />
+                            <div className={`main-top-search-text ${showGuide ? "" : "hidden"}`}>주차장 이름이나 주소를 입력해주세요</div>
+                            <img src={Search.src} alt="대표아이콘" style={{ width: "2.3vw", height: "2.3vw" }} onClick={handleSearch}/>
                         </div>
                     </div>
                 </div>
             </div>
             <div className='main-bottom'>
-                <div className='main-bottom-new'>
-                    <div className='car'>
-                    <img src={Car.src} alt="대표아이콘" style={{ width: "5.2vw", height: "4.8vw" }}/>
+                <div className='main-bottom-box'>
+                    <div className='main-bottom-new-gap'>
+                        <img src={Car.src} alt="대표아이콘" style={{ width: "5.2vw", height: "4.8vw" }}/>
                     </div>
                     <div className='main-bottom-new-text'>
-                        <div className='main-bottom-text-small'>처음 오셨나요?</div>
-                        <div className='main-bottom-text-big'>필요하신 주차장을 추천해드릴게요!</div>
+                        <div className='main-bottom-text-small'>처음 왔다면</div>
+                        <div className='main-bottom-text-big'>정보 입력하고 추천받기</div>
+                    </div>
+                </div>
+                <div className='main-bottom-box'>
+                    <div className='main-bottom-ori-gap'>
+                        <img src={Person.src} alt="대표아이콘" style={{ width: "5vw", height: "5vw" }}/>
+                    </div>
+                    <div className='main-bottom-new-text'>
+                        <div className='main-bottom-text-small'>이용한 적이 있다면</div>
+                        <div className='main-bottom-text-big'>지금 바로 추천받기</div>
                     </div>
                 </div>
             </div>

@@ -1,19 +1,21 @@
 .main{
     display: flex;
 width: 100%;
-padding: 5vw 9vw 15vw 9vw;
+min-height: 100vh;
+padding: 5vw 15vw 15vw 15vw;
 flex-direction: column;
 align-items: center;
 gap: 4.5vw;
-background: linear-gradient(180deg, #FFF 0%, #DBE7FD 100%);
+background: linear-gradient(180deg, #FFF 15%, #DBE7FD 100%);
  box-sizing: border-box; /* 패딩 포함 처리 */
+ overflow: hidden;  /* 핵심 */
 }
 
 .main-top{
     display: flex;
 flex-direction: column;
 align-items: center;
-gap: 2.1vw;
+gap: 1.5vw;
 }
 
 .main-top-two{
@@ -53,10 +55,9 @@ line-height: normal;
 
 .main-top-search{
     display: flex;
-padding: 0.9vw 18vw 0.9vw 2.5vw;
-justify-content: center;
+padding: 0.9vw 3vw 0.9vw 3vw;
 align-items: center;
-gap: 1.3vw;
+gap: 15.5vw;
 background: rgba(255, 255, 255,0.9);
 border-radius: 117px;
 backdrop-filter: blur(18px);                           /* 배경 흐림 */
@@ -74,17 +75,18 @@ backdrop-filter: blur(18px);                           /* 배경 흐림 */
 
 .main-top-search-text{
     color: #9CA3AB;
-        
 text-align: center;
 font-family: Pretendard;
 font-size: 1.6vw;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+pointer-events: none;
 }
 
 .main-bottom{
     display: flex;
+    justify-content: center;
 align-items: center;
 gap: 3.5vw;
 align-self: stretch;
@@ -108,9 +110,14 @@ background: rgba(255, 255, 255, 0.22);                 /* 더 투명하게 */
   box-shadow: 0 8px 32px rgba(39, 39, 48, 0.04);
 }
 
-.car{
+.main-bottom-new-gap{
     display: flex;
-    padding-left: 22.5vw;
+    padding-left: 15.7vw;
+}
+
+.main-bottom-ori-gap{
+      display: flex;
+    padding-left: 12vw;
 }
 
 .main-bottom-new-text{
@@ -119,23 +126,44 @@ padding-top: 2.5vw;
 flex-direction: column;
 justify-content: center;
 align-items: flex-start;
-gap: 0.9vw;
+gap: 0.5vw;
 }
 
 .main-bottom-text-small{
     color: #6B6F8D;
 font-family: Pretendard;
-font-size: 1.7vw;
+font-size: 1.6vw;
 font-style: normal;
 font-weight: 400;
+white-space: nowrap;
 }
 
 .main-bottom-text-big{
     color: #373B61;
 font-family: Pretendard;
-font-size: 2vw;
+font-size: 2.3vw;
 font-style: normal;
-font-weight: 700;
+font-weight: 600;
+white-space: nowrap;
 }
 
-.
+.searchInput{
+ position: absolute;
+ padding-left: 3vw;
+  inset: 0;            /* 부모 div 안에서 쭉 늘어나게 */
+  border: none;         /* 테두리 제거 */
+  outline: none;        /* 클릭했을 때 파란 테두리 제거 */
+  background: transparent; /* 배경 투명 */
+
+  font: inherit;        /* 부모 폰트 따라가게 */
+    color: #0f0f11;
+font-family: Pretendard;
+font-size: 1.8vw;
+font-style: normal;
+font-weight: 600;
+}
+
+.hidden{
+
+  visibility: hidden;      /* <= 핵심!! */
+}
