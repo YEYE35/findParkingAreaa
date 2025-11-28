@@ -7,18 +7,21 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 
-export default function Start({ onStart }: { onStart: () => void }){
-    const [keyword, setKeyword] = useState("");
-    const [isFocused, setIsFocused] = useState(false);
-    const router = useRouter();
 
-    const handleSearch = () => {
-    const q = keyword.trim();
-    if (!q) return;
-    // 👉 검색어를 URL에 실어서 다른 페이지로 이동
-    router.push(`/result?q=${encodeURIComponent(q)}`);
+    type StartProps = {
+        onStart: (keyword: string) => void;  // ✅ 검색어를 부모로 전달
     };
-    const showGuide = !isFocused && keyword === "";
+
+    export default function Start({ onStart }: StartProps) {
+        const [keyword, setKeyword] = useState("");
+        const [isFocused, setIsFocused] = useState(false);
+
+        const handleSearch = () => {
+            const q = keyword.trim();
+            if (!q) return;
+            onStart(q);   // ✅ 여기서 부모 함수 호출
+        };
+        const showGuide = !isFocused && keyword === "";
 
     return(
         <div className="main">
@@ -40,7 +43,16 @@ export default function Start({ onStart }: { onStart: () => void }){
                                 onKeyDown={(e) => e.key === "Enter" && handleSearch()}
                             />
                             <div className={`main-top-search-text ${showGuide ? "" : "hidden"}`}>주차장 이름이나 주소를 입력해주세요</div>
-                            <img src={Search.src} alt="대표아이콘" style={{ width: "2.3vw", height: "2.3vw" }} onClick={handleSearch}/>
+                            <div onClick={handleSearch} style={{
+                                position: "relative",
+                                zIndex: 10,        // 인풋보다 위로
+                                cursor: "pointer", // 마우스 손가락 모양
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                }}
+                            >
+                            <img src={Search.src} alt="대표아이콘" style={{ width: "2.3vw", height: "2.3vw", inset:"0" }} /></div>
                         </div>
                     </div>
                 </div>
@@ -67,4 +79,4 @@ export default function Start({ onStart }: { onStart: () => void }){
             </div>
         </div>
     );
-}
+    }

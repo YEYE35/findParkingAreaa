@@ -59,18 +59,18 @@ padding: 0.9vw 3vw 0.9vw 3vw;
 align-items: center;
 gap: 15.5vw;
 background: rgba(255, 255, 255,0.9);
-border-radius: 117px;
-backdrop-filter: blur(18px);                           /* 배경 흐림 */
-  -webkit-backdrop-filter: blur(18px);                   /* 사파리 대응 */
+border-radius: 8.5vw;
+backdrop-filter: blur(1.2vw);                           /* 배경 흐림 */
+  -webkit-backdrop-filter: blur(1.2vw);                   /* 사파리 대응 */
 
 }
 
 .border{
       position: relative;
-  padding: 4px; /* 테두리 두께 */
-  border-radius: 117px; /* 너가 원하는 둥근 정도 */
+  padding: 0.3vw; /* 테두리 두께 */
+  border-radius: 8.5vw; /* 너가 원하는 둥근 정도 */
   background: linear-gradient(135deg, hsla(234, 100%, 64%, 1), hsla(214, 91%, 93%, 1));
-    box-shadow: 0 8px 32px rgba(39, 39, 48, 0.04);
+    box-shadow: 0 0.7vw 2.1vw rgba(39, 39, 48, 0.04);
 }
 
 .main-top-search-text{
@@ -98,16 +98,14 @@ align-self: stretch;
 padding: 5vw 4.7vw 5vw 4.1vw;
 align-items: flex-start;
 gap: 0.1vw;
-border-radius: 97px;
+border-radius: 7vw;
 background: rgba(255, 255, 255, 0.22);                 /* 더 투명하게 */
-  backdrop-filter: blur(18px);                           /* 배경 흐림 */
+  backdrop-filter: blur(1.4vw);                           /* 배경 흐림 */
   -webkit-backdrop-filter: blur(18px);                   /* 사파리 대응 */
-
   /* 유리 테두리 느낌 */
   border: 1.5px solid rgba(255, 255, 255, 0.35);
-
   /* 유리 섀도우로 떠있는 느낌 */
-  box-shadow: 0 8px 32px rgba(39, 39, 48, 0.04);
+  box-shadow: 0 0.7vw 2.1vw rgba(39, 39, 48, 0.04);
 }
 
 .main-bottom-new-gap{
@@ -150,7 +148,7 @@ white-space: nowrap;
 .searchInput{
  position: absolute;
  padding-left: 3vw;
-  inset: 0;            /* 부모 div 안에서 쭉 늘어나게 */
+  inset: 1;            /* 부모 div 안에서 쭉 늘어나게 */
   border: none;         /* 테두리 제거 */
   outline: none;        /* 클릭했을 때 파란 테두리 제거 */
   background: transparent; /* 배경 투명 */
@@ -164,6 +162,5 @@ font-weight: 600;
 }
 
 .hidden{
-
   visibility: hidden;      /* <= 핵심!! */
 }
