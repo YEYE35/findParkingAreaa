@@ -77,7 +77,7 @@ backdrop-filter: blur(1.2vw);                           /* 배경 흐림 */
     color: #9CA3AB;
 text-align: center;
 font-family: Pretendard;
-font-size: 1.6vw;
+font-size: 1.4vw;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
@@ -98,10 +98,11 @@ align-self: stretch;
 padding: 5vw 4.7vw 5vw 4.1vw;
 align-items: flex-start;
 gap: 0.1vw;
-border-radius: 7vw;
+border-radius: 3vw;
 background: rgba(255, 255, 255, 0.22);                 /* 더 투명하게 */
-  backdrop-filter: blur(1.4vw);                           /* 배경 흐림 */
-  -webkit-backdrop-filter: blur(18px);                   /* 사파리 대응 */
+  backdrop-filter: blur(50px);                           /* 배경 흐림 */
+  -webkit-backdrop-filter: blur(50px);       
+filter: blur(0.3px);            /* 사파리 대응 */
   /* 유리 테두리 느낌 */
   border: 1.5px solid rgba(255, 255, 255, 0.35);
   /* 유리 섀도우로 떠있는 느낌 */
