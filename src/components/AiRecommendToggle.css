@@ -1,0 +1,35 @@
+.ai-toggle {
+display: flex;
+padding: 0.2vw 1.7vw;
+width: 10vw;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border-radius: 15vw;
+}
+
+.ai-off {
+background: rgba(255, 255, 255, 0.56);
+border: 2px solid rgba(203, 218, 234, 0.56);
+border-radius: 8.5vw;
+backdrop-filter: blur(1.2vw);     
+-webkit-backdrop-filter: blur(1.2vw); 
+color: #777DAE;
+font-family: Pretendard;
+font-size: 1.2vw;
+font-style: normal;
+font-weight: 400;
+}
+
+.ai-on {
+background: rgba(219, 234, 253, 0.56);
+border: 2px solid rgba(203, 218, 234, 0.56);
+border-radius: 8.5vw;
+backdrop-filter: blur(1.2vw);                   
+-webkit-backdrop-filter: blur(1.2vw); 
+color: #777DAE;
+font-family: Pretendard;
+font-size: 1.2vw;
+font-style: normal;
+font-weight: 400;
+}

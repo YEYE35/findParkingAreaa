@@ -1,40 +1,40 @@
 .main{
-    display: flex;
+display: flex;
 width: 100%;
 min-height: 100vh;
-padding: 5vw 15vw 15vw 15vw;
+padding: 3vw 15vw 15vw 15vw;
 flex-direction: column;
 align-items: center;
 gap: 4.5vw;
-background: linear-gradient(180deg, #FFF 15%, #DBE7FD 100%);
- box-sizing: border-box; /* 패딩 포함 처리 */
- overflow: hidden;  /* 핵심 */
+background: linear-gradient(180deg, #FFF 35%, #DBE7FD 100%);
+box-sizing: border-box;
+overflow: hidden;
 }
 
 .main-top{
-    display: flex;
+display: flex;
 flex-direction: column;
 align-items: center;
 gap: 1.5vw;
 }
 
 .main-top-two{
-    display: flex;
+display: flex;
 flex-direction: column;
 align-items: center;
 gap: 2.1vw;
 }
 
 .main-top-text{
-    display: flex;
+display: flex;
 flex-direction: column;
 align-items: center;
 gap: 0.4vw;
 }
 
 .main-top-text-small{
-    align-self: stretch;
-    color: #2C2F4E;
+align-self: stretch;
+color: #2C2F4E;
 text-align: center;
 font-family: Pretendard;
 font-size: 2.7vw;
@@ -44,7 +44,7 @@ line-height: normal;
 }
 
 .main-top-text-big{
-    color: #2C2F4E;
+color: #2C2F4E;
 text-align: center;
 font-family: Pretendard;
 font-size: 3.7vw;
@@ -54,27 +54,26 @@ line-height: normal;
 }
 
 .main-top-search{
-    display: flex;
+display: flex;
 padding: 0.9vw 3vw 0.9vw 3vw;
 align-items: center;
 gap: 15.5vw;
 background: rgba(255, 255, 255,0.9);
 border-radius: 8.5vw;
-backdrop-filter: blur(1.2vw);                           /* 배경 흐림 */
-  -webkit-backdrop-filter: blur(1.2vw);                   /* 사파리 대응 */
-
+backdrop-filter: blur(1.2vw);                        
+-webkit-backdrop-filter: blur(1.2vw);
 }
 
 .border{
-      position: relative;
-  padding: 0.3vw; /* 테두리 두께 */
-  border-radius: 8.5vw; /* 너가 원하는 둥근 정도 */
-  background: linear-gradient(135deg, hsla(234, 100%, 64%, 1), hsla(214, 91%, 93%, 1));
-    box-shadow: 0 0.7vw 2.1vw rgba(39, 39, 48, 0.04);
+position: relative;
+padding: 0.3vw; /* 테두리 두께 */
+border-radius: 8.5vw; /* 너가 원하는 둥근 정도 */
+background: linear-gradient(135deg, hsla(234, 100%, 64%, 1), hsla(214, 91%, 93%, 1));
+box-shadow: 0 0.7vw 2.1vw rgba(39, 39, 48, 0.04);
 }
 
 .main-top-search-text{
-    color: #9CA3AB;
+color: #9CA3AB;
 text-align: center;
 font-family: Pretendard;
 font-size: 1.4vw;
@@ -84,78 +83,15 @@ line-height: normal;
 pointer-events: none;
 }
 
-.main-bottom{
-    display: flex;
-    justify-content: center;
-align-items: center;
-gap: 3.5vw;
-align-self: stretch;
-}
-
-.main-bottom-box{
-    display: flex;
-    flex-direction: column;
-padding: 5vw 4.7vw 5vw 4.1vw;
-align-items: flex-start;
-gap: 0.1vw;
-border-radius: 3vw;
-background: rgba(255, 255, 255, 0.22);                 /* 더 투명하게 */
-  backdrop-filter: blur(50px);                           /* 배경 흐림 */
-  -webkit-backdrop-filter: blur(50px);       
-filter: blur(0.3px);            /* 사파리 대응 */
-  /* 유리 테두리 느낌 */
-  border: 1.5px solid rgba(255, 255, 255, 0.35);
-  /* 유리 섀도우로 떠있는 느낌 */
-  box-shadow: 0 0.7vw 2.1vw rgba(39, 39, 48, 0.04);
-}
-
-.main-bottom-new-gap{
-    display: flex;
-    padding-left: 15.7vw;
-}
-
-.main-bottom-ori-gap{
-      display: flex;
-    padding-left: 12vw;
-}
-
-.main-bottom-new-text{
-    display: flex;
-padding-top: 2.5vw;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-gap: 0.5vw;
-}
-
-.main-bottom-text-small{
-    color: #6B6F8D;
-font-family: Pretendard;
-font-size: 1.6vw;
-font-style: normal;
-font-weight: 400;
-white-space: nowrap;
-}
-
-.main-bottom-text-big{
-    color: #373B61;
-font-family: Pretendard;
-font-size: 2.3vw;
-font-style: normal;
-font-weight: 600;
-white-space: nowrap;
-}
-
 .searchInput{
- position: absolute;
- padding-left: 3vw;
-  inset: 1;            /* 부모 div 안에서 쭉 늘어나게 */
-  border: none;         /* 테두리 제거 */
-  outline: none;        /* 클릭했을 때 파란 테두리 제거 */
-  background: transparent; /* 배경 투명 */
-
-  font: inherit;        /* 부모 폰트 따라가게 */
-    color: #0f0f11;
+position: absolute;
+padding-left: 3vw;
+inset: 1;   
+border: none; 
+outline: none;  
+background: transparent;
+font: inherit;    
+color: #0f0f11;
 font-family: Pretendard;
 font-size: 1.8vw;
 font-style: normal;
@@ -163,5 +99,5 @@ font-weight: 600;
 }
 
 .hidden{
-  visibility: hidden;      /* <= 핵심!! */
+visibility: hidden;
 }

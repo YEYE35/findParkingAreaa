@@ -1,27 +1,20 @@
 'use client';
-
 import './start.css';
 import Search from "../../../assets/search.svg";
-import Car from "../../../assets/car.svg";
-import Person from "../../../assets/person.svg";
 import { useState } from "react";
 
-// ✅ 이제 onStart는 "필수" props (라우터 안 씀)
 type StartProps = {
-  onStart: (keyword: string) => void;  // 검색어를 부모(page.tsx)로 전달
+  onStart: (keyword: string) => void;
 };
 
 export default function Start({ onStart }: StartProps) {
   const [keyword, setKeyword] = useState("");
   const [isFocused, setIsFocused] = useState(false);
-
   const handleSearch = () => {
     const q = keyword.trim();
     if (!q) return;
-    // ✅ 더 이상 router.push 안 쓰고, 부모에게 검색어만 올려보냄
     onStart(q);
   };
-
   const showGuide = !isFocused && keyword === "";
 
   return (
@@ -51,7 +44,7 @@ export default function Start({ onStart }: StartProps) {
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
                 onKeyDown={(e) => {
-                  if (e.key === "Enter") handleSearch(); // ⏎로 검색
+                  if (e.key === "Enter") handleSearch();
                 }}
               />
               <div
@@ -65,8 +58,8 @@ export default function Start({ onStart }: StartProps) {
                 onClick={handleSearch}
                 style={{
                   position: "relative",
-                  zIndex: 10,        // 인풋보다 위로
-                  cursor: "pointer", // 마우스 손가락 모양
+                  zIndex: 10,       
+                  cursor: "pointer",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -79,35 +72,6 @@ export default function Start({ onStart }: StartProps) {
                 />
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="main-bottom">
-        <div className="main-bottom-box">
-          <div className="main-bottom-new-gap">
-            <img
-              src={Car.src}
-              alt="대표아이콘"
-              style={{ width: "5.2vw", height: "4.8vw" }}
-            />
-          </div>
-          <div className="main-bottom-new-text">
-            <div className="main-bottom-text-small">처음 왔다면</div>
-            <div className="main-bottom-text-big">정보 입력하고 추천받기</div>
-          </div>
-        </div>
-        <div className="main-bottom-box">
-          <div className="main-bottom-ori-gap">
-            <img
-              src={Person.src}
-              alt="대표아이콘"
-              style={{ width: "5vw", height: "5vw" }}
-            />
-          </div>
-          <div className="main-bottom-new-text">
-            <div className="main-bottom-text-small">이용한 적이 있다면</div>
-            <div className="main-bottom-text-big">지금 바로 추천받기</div>
           </div>
         </div>
       </div>

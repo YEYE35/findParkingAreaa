@@ -1,6 +1,4 @@
-// src/app/page.tsx
 'use client';
-
 import parkingData from '../data/parking.json';
 import { useState } from 'react';
 import Start from './pages/start/start';
@@ -33,11 +31,9 @@ function extractParkingItems(raw: any): ParkingItem[] {
   function dfs(node: any): ParkingItem[] {
     if (!node || typeof node !== 'object' || visited.has(node)) return [];
     visited.add(node);
-
     if (Array.isArray(node) && node.length > 0 && typeof node[0] === 'object') {
       return node as ParkingItem[];
     }
-
     for (const value of Object.values(node)) {
       const found = dfs(value);
       if (found.length > 0) return found;
@@ -50,29 +46,24 @@ function extractParkingItems(raw: any): ParkingItem[] {
 }
 
 export default function Home() {
-  // ✅ 페이지 상태: null이면 Start, 문자열이면 Output
   const [keyword, setKeyword] = useState<string | null>(null);
-
   const data: any = parkingData;
   const items: ParkingItem[] = extractParkingItems(data);
 
-  // 1) 아직 검색 전 👉 Start 화면만 보여주기
   if (keyword === null) {
     return (
       <Start
         onStart={(q) => {
-          setKeyword(q);   // ✅ 검색어 세팅 → Output 화면으로 전환
+          setKeyword(q); 
         }}
       />
     );
   }
-
-  // 2) 검색 후 👉 Output 화면으로 “네비게이션”
   return (
     <Output
       keyword={keyword}
       items={items}
-      onBack={() => setKeyword(null)} // 뒤로가기 누르면 다시 Start
+      onBack={() => setKeyword(null)}
       onSearch={(q) => setKeyword(q)}   
     />
   );
